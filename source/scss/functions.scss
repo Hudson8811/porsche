@@ -1,0 +1,31 @@
+@function vw($value, $size: 1920) {
+	@return $value / $size * 100vw;
+}
+
+@function vh($value, $size: 1024) {
+	@return $value / $size * 100vh;
+}
+// Отзывчатый размер шрифта - источник https://habr.com/ru/post/310186/
+// Пример использования - https://codepen.io/ROBsoer/pen/PGkWbK
+
+@function strip-unit($number) {
+	@if type-of($number) == "number" and not unitless($number) {
+		@return $number / ($number * 0 + 1);
+	}
+
+	@return $number;
+}
+
+@function calc-fluid-font-size($f-min, $f-max, $w-min, $w-max, $units: px) {
+	$f-min: strip-unit($f-min);
+	$f-max: strip-unit($f-max);
+	$w-min: strip-unit($w-min);
+	$w-max: strip-unit($w-max);
+
+	$k: ($f-max - $f-min)/ ($w-max - $w-min);
+	$b: $f-min - $k * $w-min;
+
+	$b: $b + $units;
+
+	@return calc(#{$k} * 100vw + #{$b});
+}

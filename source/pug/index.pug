@@ -4,15 +4,32 @@ block variables
 	- let isHome = true;
 
 block content
-	.container
-		h1.heading Заголовок
-		p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque optio reprehenderit sunt sequi aperiam quas voluptas ab. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque optio reprehenderit sunt sequi aperiam quas voluptas ab. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque optio reprehenderit sunt sequi aperiam quas voluptas ab.
-		p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque optio reprehenderit sunt sequi aperiam quas voluptas ab.
-		p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque optio reprehenderit sunt sequi aperiam quas voluptas ab.
-		h2.heading Иконки
-		+icon('close')(width="40", height="40")
-		+icon('menu')(width="40", height="40")
+	section.test
+		.container
+			.test__heading К какой гоночной серии относится этот факт:
+			.test__wrapper
+				.test__counter 01/07
+				.test__question Здесь гоночные болиды набирают 100 км/ч за 2,8 секунды и разгоняются до максималки в 280 км/ч. Как называется этот чемпионат?
+				.test__answer(style="display: none;")
+					img(src="img/car.png", width="1276", height="386" alt="car")
+					.test__answer-text Точно! От динамики электрических формул буквально захватывает дух!
+				.test__buttons
+					a.test__btn(href="#") Это Formula E
+					a.test__btn.test__btn--white(href="#") Это чемпионат WRC
+					a.test__btn(href="#", style="display: none;") Далее
+			.test__progress
+				- let i = 1;
+				while i <= 7
+					if i === 1
+						.test__progress-item.test__progress-item--active
+							span.test__progress-item-text 0#{i}
+					else if i === 7
+						.test__progress-item.test__progress-item--last
+							span.test__progress-item-text 0#{i}
+					else
+						.test__progress-item
+							span.test__progress-item-text 0#{i}
+					- i++;
 
 block footer
 	include modules/footer.pug
-	

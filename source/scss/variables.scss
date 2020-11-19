@@ -9,3 +9,25 @@ $full-width: 1920px;
 
 $white: #ffffff;
 $base-color: #000000;
+
+$color-bg: #e7eced;
+$color-logo: #d90613;
+$color-red: #f91719;
+$color-social: #e81115;
+$color-grey: #868686;
+$color-grey2: #c4c4c4;
+$color-counter: #ddbebe;
+$color-pink: #e1959b;
+
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;
+
+$breakpoints: (
+	default: "default",
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px,
+	xxx: 1900px,
+) !default;

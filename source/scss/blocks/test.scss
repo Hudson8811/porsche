@@ -1,0 +1,151 @@
+.test {
+	&__wrapper {
+		position: relative;
+		margin-bottom: 105px;
+	}
+
+	&__heading {
+		margin: 0 0 24px;
+
+		@include fluid-font-size(26px, 36px, 320px, 430px);
+		font-family: "Playfair Display", "Georgia", serif;
+		line-height: 1;
+		color: $color-red;
+		font-weight: 400;
+		text-transform: uppercase;
+		text-align: center;
+	}
+
+	&__question {
+		padding-top: 60px;
+
+		@include fluid-font-size(16px, 21px, 320px, 430px);
+		line-height: 1.38;
+		text-align: center;
+		font-weight: 500;
+	}
+
+	&__counter {
+		position: absolute;
+		z-index: -1;
+		left: 50%;
+		top: 0;
+		transform: translateX(-50%);
+		width: 100%;
+
+		@include fluid-font-size(110px, 144px, 320px, 430px);
+		font-family: "PF Din Display Pro", "Arial", sans-serif;
+		line-height: 1;
+		font-weight: 900;
+		color: $color-counter;
+		text-align: center;
+	}
+
+	&__buttons {
+		display: flex;
+		flex-direction: column;
+		margin-top: 40px;
+	}
+
+	&__btn {
+		min-width: 285px;
+		padding: 20px 8px;
+
+		@include fluid-font-size(20px, 26px, 320px, 430px);
+		text-align: center;
+		font-weight: 500;
+		color: $white;
+		line-height: 1;
+		border-radius: 33px;
+		background-color: $color-red;
+		align-self: center;
+
+		& + * {
+			margin-top: 16px;
+		}
+
+		&:hover,
+		&:focus {
+			outline: none;
+			background-color: lighten($color-red, 10%);
+		}
+
+		&:active {
+			opacity: 0.7;
+		}
+
+		&--white {
+			padding: 18px 8px;
+			color: $color-red;
+			border: solid 1px $color-red;
+			background-color: $white;
+
+			&:hover,
+			&:focus {
+				color: lighten($color-red, 10%);
+				background-color: $white;
+			}
+		}
+	}
+
+	&__progress {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		max-width: 830px;
+		height: 1px;
+		margin: 0 5px 60px;
+		background-color: $color-grey2;
+
+		&-item {
+			$item: &;
+			position: relative;
+
+			&::before {
+				content: "";
+				display: block;
+				width: 11px;
+				height: 11px;
+				margin-top: -5px;
+				border-radius: 50%;
+				background-color: $color-counter;
+			}
+
+			&-text {
+				position: absolute;
+				top: 32px;
+				left: 50%;
+				transform: translateX(-50%);
+
+				display: none;
+
+				@include fluid-font-size(20px, 26px, 320px, 430px);
+				text-align: center;
+				font-weight: 500;
+				color: $color-pink;
+				line-height: 1;
+			}
+
+			&--active {
+				&::before {
+					background-color: $color-red;
+					box-shadow: 0 0 0 19px rgba(217, 6, 19, 0.3);
+				}
+				#{$item}-text {
+					display: block;
+				}
+			}
+			&--last {
+				#{$item}-text {
+					display: block;
+				}
+			}
+		}
+	}
+
+	img {
+		display: block;
+		max-width: 100%;
+		height: auto;
+	}
+}

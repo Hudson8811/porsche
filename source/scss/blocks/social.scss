@@ -1,0 +1,27 @@
+.social {
+	@include list-reset;
+	display: flex;
+
+	&__item {
+		align-self: center;
+	}
+
+	&__link {
+		svg {
+			fill: $color-social;
+		}
+
+		&:hover,
+		&:focus {
+			outline: none;
+
+			svg {
+				fill: lighten($color-social, 10%);
+			}
+		}
+
+		&:active {
+			opacity: 0.7;
+		}
+	}
+}

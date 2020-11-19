@@ -1,19 +1,56 @@
 @mixin list-reset() {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
 @mixin text($fz: 14px, $lh: 1.57, $c: $base-color) {
-  font-size: $fz;
-  line-height: $lh;
-  color: $c;
+	font-size: $fz;
+	line-height: $lh;
+	color: $c;
 }
 
-@mixin pseudo($display: block, $pos: absolute, $content: ''){
-  content: $content;
-  display: $display;
-  position: $pos;
+@mixin pseudo($display: block, $pos: absolute, $content: "") {
+	content: $content;
+	display: $display;
+	position: $pos;
+}
+
+@mixin retina {
+	@media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+		@content;
+	}
+}
+
+@mixin media($media) {
+	@each $breakpoint, $breakpointValue in $breakpoints {
+		@if $media == $breakpoint {
+			@media (min-width: $breakpointValue) {
+				@content;
+			}
+		}
+	}
+}
+
+@mixin media-custom($min-w) {
+	@media (min-width: $min-w) {
+		@content;
+	}
+}
+
+@mixin fluid-font-size($f-min, $f-max, $w-min, $w-max, $fallback: false) {
+	font-size: $f-min;
+
+	@media (min-width: $w-min) {
+		@if ($fallback) {
+			font-size: $fallback;
+		}
+		font-size: calc-fluid-font-size($f-min, $f-max, $w-min, $w-max, px);
+	}
+
+	@media (min-width: $w-max) {
+		font-size: $f-max;
+	}
 }
 
 @mixin _480 {
