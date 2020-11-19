@@ -6,13 +6,23 @@
 	&__inner {
 		display: flex;
 		flex-wrap: wrap;
+
+		&::before {
+			content: "";
+			width: 100%;
+
+			@include media(md) {
+				order: 1;
+			}
+		}
 	}
 
 	&__heading {
 		position: relative;
-		margin: 230px 0 36px; //46.3vw
+		max-width: 420px;
+		margin: 230px auto 36px; //46.3vw
 
-		@include fluid-font-size(42px, 58px, 320px, 430px);
+		@include fluid-font-size(42px, 58px, 320px, 1920px);
 		line-height: 1;
 		color: $white;
 		font-family: "Playfair Display", "Georgia", serif;
@@ -35,18 +45,39 @@
 			filter: blur(25px);
 		}
 
-		@include media-custom(480px) {
+		@include media(md) {
+			/*display: inline;*/
+			width: 100%;
+			max-width: none;
+			margin-top: 0;
+			margin-left: 0;
+			text-align: left;
+
+			&::before {
+				max-width: 500px;
+			}
 		}
 	}
 
 	&__social {
 		margin-right: auto;
+		order: -2;
+
+		@include media(md) {
+			margin: 0 0 0 auto;
+			order: 1;
+		}
+	}
+
+	&__logo {
 		order: -1;
+
+		@include media(md) {
+			margin-bottom: vw(102);
+		}
 	}
 
 	&__text {
-		margin-bottom: 32px;
-
 		@include text(13px, 18px, $color-grey);
 		text-align: center;
 
@@ -57,6 +88,14 @@
 		p + p {
 			margin-top: 16px;
 		}
+
+		@include media(md) {
+			max-width: vw(812);
+			font-size: vw(30);
+			line-height: 1.24;
+			color: $white;
+			text-align: left;
+		}
 	}
 
 	&__btn {
@@ -65,7 +104,7 @@
 		vertical-align: top;
 		z-index: 1;
 		min-width: 230px;
-		margin: 0 auto;
+		margin: 32px auto 0;
 		padding: 17px 20px;
 
 		@include text(21px, 1, $white);
