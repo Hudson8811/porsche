@@ -1,0 +1,21 @@
+.container {
+  padding: 0 15px;
+
+  @include _480 {
+    max-width: $mobile-width;
+    margin: 0 auto;
+  }
+  @include _575 {
+    max-width: $mobile-landscape-width;
+  }
+  @include _768 {
+    max-width: $tablet-width;
+  }
+  @include _992 {
+    max-width: $tablet-landscape-width;
+  }
+  @include _1170 {
+    max-width: $desktop-width;
+  }
+}
+

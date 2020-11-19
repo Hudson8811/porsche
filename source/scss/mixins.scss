@@ -1,0 +1,43 @@
+@mixin list-reset() {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@mixin text($fz: 14px, $lh: 1.57, $c: $base-color) {
+  font-size: $fz;
+  line-height: $lh;
+  color: $c;
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+@mixin _480 {
+	@media screen and (min-width: 480px) {
+		@content;
+	}
+}
+@mixin _575 {
+	@media screen and (min-width: 575px) {
+		@content;
+	}
+}
+@mixin _768 {
+	@media screen and (min-width: 768px) {
+		@content;
+	}
+}
+@mixin _992 {
+	@media screen and (min-width: 992px) {
+		@content;
+	}
+}
+@mixin _1170 {
+	@media screen and (min-width: 1170px) {
+		@content;
+	}
+}

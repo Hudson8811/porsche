@@ -1,0 +1,25 @@
+include ../_vars.pug
+block variables
+
+include ../mixins/mixins.pug
+
+doctype html
+html.no-js(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1")
+    +fonts(FONTS)
+    link(rel="stylesheet", href="css/main.min.css")
+    title= pageTitle
+    script document.createElement("picture");
+    script(src="js/picturefill.js", async)
+
+  body.webpage
+    div(style="display: none")
+      include ../../../build/img/sprite.svg
+    include ../modules/header.pug
+    main
+      block content
+    block footer
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    script(src="../js/main.min.js")

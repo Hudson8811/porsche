@@ -1,0 +1,7 @@
+.heading {
+  @include text(24px, 1.25);
+
+  @include _768 {
+    font-size: 36px;
+  }
+}

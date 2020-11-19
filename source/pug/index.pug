@@ -1,0 +1,18 @@
+extends templates/main.pug
+block variables
+	- let pageTitle = 'Название страницы в браузере';
+	- let isHome = true;
+
+block content
+	.container
+		h1.heading Заголовок
+		p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque optio reprehenderit sunt sequi aperiam quas voluptas ab. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque optio reprehenderit sunt sequi aperiam quas voluptas ab. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque optio reprehenderit sunt sequi aperiam quas voluptas ab.
+		p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque optio reprehenderit sunt sequi aperiam quas voluptas ab.
+		p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque optio reprehenderit sunt sequi aperiam quas voluptas ab.
+		h2.heading Иконки
+		+icon('close')(width="40", height="40")
+		+icon('menu')(width="40", height="40")
+
+block footer
+	include modules/footer.pug
+	

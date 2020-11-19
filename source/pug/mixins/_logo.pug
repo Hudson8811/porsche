@@ -1,0 +1,12 @@
+mixin logo(isHome, cl)
+  if (isHome)
+    a(class= cl + " logo")
+      picture
+        source(type="image/webp" srcset="../images/logo.webp")
+        img(src="../images/logo.png", alt="Логотип")
+  else
+    a(class= cl + " logo", href="index.html")
+      picture
+        source(type="image/webp" srcset="../images/logo.webp")
+        img(src="../images/logo.png", alt="Логотип")
+
