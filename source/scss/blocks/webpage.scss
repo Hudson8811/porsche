@@ -1,11 +1,11 @@
 .webpage {
 	background-repeat: no-repeat;
-	background-size: 100% auto;
-	background-image: url("../img/bg-mobile.jpg");
+	background-position: right 0 top 0;
+	background-image: url("../img/mobile-bg.jpg");
 	background-color: $color-bg;
 
 	@include retina {
-		background-image: url("../img/bg-mobile@2x.jpg");
+		background-image: url("../img/mobile-bg@2x.jpg");
 	}
 
 	/*@include media-custom(480px) {
@@ -14,6 +14,6 @@
 	}*/
 
 	&__header {
-		margin-bottom: 80px;
+		margin-bottom: 60px;
 	}
 }

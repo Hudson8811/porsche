@@ -1,5 +1,7 @@
 .header {
 	padding-top: 16px;
+	padding-bottom: 20px;
+	overflow: hidden;
 
 	&__inner {
 		display: flex;
@@ -7,19 +9,33 @@
 	}
 
 	&__heading {
-		margin: 0 0 36px; //46.3vw
-		padding-top: 50%;
+		position: relative;
+		margin: 230px 0 36px; //46.3vw
 
 		@include fluid-font-size(42px, 58px, 320px, 430px);
 		line-height: 1;
 		color: $white;
-		font-family: "Playfair Display", "Arial", sans-serif;
+		font-family: "Playfair Display", "Georgia", serif;
 		font-weight: 400;
 		text-transform: uppercase;
 		text-align: center;
 
+		&::before {
+			content: "";
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translateX(-50%) translateY(-50%);
+			z-index: -1;
+			width: 120%;
+			height: 120%;
+			border-radius: 50%;
+			background-color: $color-red;
+			opacity: 0.9;
+			filter: blur(25px);
+		}
+
 		@include media-custom(480px) {
-			padding-top: 56%;
 		}
 	}
 
