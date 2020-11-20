@@ -4,7 +4,8 @@
 	overflow: hidden;
 
 	@include media(md) {
-		padding-top: vw(94);
+		min-height: 100vh;
+		padding-top: vw(50);
 	}
 
 	&__inner {
@@ -30,8 +31,9 @@
 			position: relative;
 			margin: 0;
 
-			@include fluid-font-size(42px, 134px, 320px, 1920px);
+			@include fluid-font-size(42px, 110px, 320px, 1920px);
 			line-height: 0.87;
+			letter-spacing: 6px;
 			color: $white;
 			font-family: "Playfair Display", "Georgia", serif;
 			font-weight: 400;
@@ -114,7 +116,7 @@
 		order: -1;
 
 		@include media(md) {
-			margin-bottom: vw(102);
+			margin-bottom: vw(60);
 		}
 	}
 
@@ -134,17 +136,18 @@
 			max-width: 60%;
 			//font-size: vw(30);
 
-			@include fluid-font-size(13px, 21px, 768px, 1920px);
+			@include fluid-font-size(13px, 19px, 768px, 1920px);
 			line-height: 1.24;
 			color: $white;
 			text-align: left;
 		}
 
 		@include media(lg) {
-			max-width: vw(812);
+			max-width: vw(900);
+			margin-top: auto;
 
 			p + p {
-				margin-top: vw(30);
+				margin-top: vw(20);
 			}
 		}
 	}
@@ -191,7 +194,7 @@
 
 		@include media(lg) {
 			min-width: vw(285);
-			margin: vw(70) auto 0;
+			margin: vw(40) auto 0;
 			padding: vw(20) vw(20);
 			font-size: vw(26);
 			//@include fluid-font-size(21px, 26px, 768px, 1920px);
