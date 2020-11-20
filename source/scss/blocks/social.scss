@@ -4,11 +4,25 @@
 
 	&__item {
 		align-self: center;
+
+		@include media(md) {
+			margin-right: vw(14);
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
 	}
 
 	&__link {
 		svg {
+			display: block;
 			fill: $color-social;
+
+			@include media(md) {
+				width: 34px;
+				height: 34px;
+			}
 		}
 
 		&:hover,

@@ -3,6 +3,10 @@
 	padding-bottom: 20px;
 	overflow: hidden;
 
+	@include media(md) {
+		padding-top: vw(94);
+	}
+
 	&__inner {
 		display: flex;
 		flex-wrap: wrap;
@@ -22,8 +26,8 @@
 		max-width: 420px;
 		margin: 230px auto 36px; //46.3vw
 
-		@include fluid-font-size(42px, 58px, 320px, 1920px);
-		line-height: 1;
+		@include fluid-font-size(42px, 134px, 320px, 1920px);
+		line-height: 0.87;
 		color: $white;
 		font-family: "Playfair Display", "Georgia", serif;
 		font-weight: 400;
@@ -50,7 +54,8 @@
 			width: 100%;
 			max-width: none;
 			margin-top: 0;
-			margin-left: 0;
+			margin-left: vw(-18);
+			margin-bottom: vw(45);
 			text-align: left;
 
 			&::before {
@@ -64,7 +69,7 @@
 		order: -2;
 
 		@include media(md) {
-			margin: 0 0 0 auto;
+			margin: vw(-50) 0 0 auto;
 			order: 1;
 		}
 	}
@@ -90,11 +95,21 @@
 		}
 
 		@include media(md) {
-			max-width: vw(812);
-			font-size: vw(30);
+			max-width: 60%;
+			//font-size: vw(30);
+
+			@include fluid-font-size(13px, 21px, 768px, 1920px);
 			line-height: 1.24;
 			color: $white;
 			text-align: left;
+		}
+
+		@include media(lg) {
+			max-width: vw(812);
+
+			p + p {
+				margin-top: vw(30);
+			}
 		}
 	}
 
@@ -136,6 +151,14 @@
 			border-radius: 30px;
 			filter: blur(10px);
 			pointer-events: none;
+		}
+
+		@include media(lg) {
+			min-width: vw(285);
+			margin: vw(70) auto 0;
+			padding: vw(20) vw(20);
+			font-size: vw(26);
+			//@include fluid-font-size(21px, 26px, 768px, 1920px);
 		}
 	}
 }
