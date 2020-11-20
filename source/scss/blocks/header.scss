@@ -1,18 +1,19 @@
 .header {
-	padding-top: 16px;
-	padding-bottom: 20px;
 	overflow: hidden;
-
-	@include media(md) {
-		padding-top: vw(50);
-	}
 
 	&__inner {
 		display: flex;
-		//flex-wrap: wrap;
-		flex-direction: column;
-		justify-content: space-between;
+		flex-wrap: wrap;
 		min-height: 100vh;
+		padding-top: 16px;
+		padding-bottom: 20px;
+
+		@include media(md) {
+			padding-top: vw(50);
+
+			flex-direction: column;
+			justify-content: space-between;
+		}
 
 		&::before {
 			content: "";
@@ -105,8 +106,11 @@
 		order: -2;
 
 		@include media(md) {
-			margin: vw(-50) 0 0 auto;
-			transform: translateY(-150%);
+			position: absolute;
+			bottom: 4.33vh;
+			right: vw(80);
+			//margin: vw(-50) 0 0 auto;
+			//transform: translateY(-100%);
 			order: 1;
 		}
 	}
@@ -193,7 +197,7 @@
 
 		@include media(md) {
 			min-width: vw(285);
-			margin: 0 auto 20px 0;
+			margin: 0 auto 0 0;
 			padding: vw(20) vw(20);
 			font-size: vw(26);
 			//@include fluid-font-size(21px, 26px, 768px, 1920px);
