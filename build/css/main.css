@@ -668,13 +668,15 @@ a {
   overflow: hidden; }
   @media (min-width: 768px) {
     .header {
-      min-height: 100vh;
       padding-top: 2.60417vw; } }
   .header__inner {
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap; }
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    min-height: 100vh; }
     .header__inner::before {
       content: "";
       width: 100%; }
@@ -758,6 +760,8 @@ a {
     @media (min-width: 768px) {
       .header__social {
         margin: -2.60417vw 0 0 auto;
+        -ms-transform: translateY(-150%);
+            transform: translateY(-150%);
         -ms-flex-order: 1;
             order: 1; } }
   .header__logo {
@@ -765,7 +769,7 @@ a {
         order: -1; }
     @media (min-width: 768px) {
       .header__logo {
-        margin-bottom: 3.125vw; } }
+        margin-bottom: 1.5625vw; } }
   .header__text {
     font-size: 13px;
     line-height: 18px;
@@ -791,7 +795,7 @@ a {
     @media (min-width: 992px) {
       .header__text {
         max-width: 46.875vw;
-        margin-top: auto; }
+        margin-bottom: 1.04167vw; }
         .header__text p + p {
           margin-top: 1.04167vw; } }
   .header__btn {
@@ -827,10 +831,10 @@ a {
       border-radius: 30px;
       filter: blur(10px);
       pointer-events: none; }
-    @media (min-width: 992px) {
+    @media (min-width: 768px) {
       .header__btn {
         min-width: 14.84375vw;
-        margin: 2.08333vw auto 0;
+        margin: 0 auto 20px 0;
         padding: 1.04167vw 1.04167vw;
         font-size: 1.35417vw; } }
 
@@ -844,12 +848,15 @@ a {
       background-image: url("../img/mobile-bg@2x.jpg"); } }
   @media (min-width: 768px) {
     .webpage {
-      background-position: 50% 0;
-      background-size: 100% auto;
-      background-image: url("../img/group.jpg"); } }
+      background-position: 30% -20px;
+      background-size: 1366px auto;
+      background-image: url("../img/bg.jpg"); } }
   @media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 768px) and (min-resolution: 144dpi), (min-width: 768px) and (min-resolution: 1.5dppx) {
     .webpage {
       background-image: url("../img/bg@2x.jpg"); } }
+  @media (min-width: 1366px) {
+    .webpage {
+      background-size: 100% auto; } }
   .webpage__header {
     margin-bottom: 60px; }
     @media (min-width: 768px) {

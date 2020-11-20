@@ -9,13 +9,17 @@
 	}
 
 	@include media(md) {
-		background-position: 50% 0;
-		background-size: 100% auto;
-		background-image: url("../img/group.jpg");
+		background-position: 30% -20px;
+		background-size: 1366px auto;
+		background-image: url("../img/bg.jpg");
 
 		@include retina {
 			background-image: url("../img/bg@2x.jpg");
 		}
+	}
+
+	@include media(xxl) {
+		background-size: 100% auto;
 	}
 
 	&__header {
