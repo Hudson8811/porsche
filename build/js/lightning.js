@@ -458,7 +458,7 @@ function randint(max, min) {
     function resize() {
 				var heading = document.querySelector('.header__heading h1');
         canvas.width  = heading.clientWidth;//window.innerWidth;
-        canvas.height = heading.clientHeight + 200;
+        canvas.height = heading.clientHeight + 300;
         centerX = canvas.width * 0.5;
         centerY = canvas.height * 0.5;
         context = canvas.getContext('2d');
@@ -520,8 +520,8 @@ function randint(max, min) {
 //new Point(centerX - 200, centerY, lightning.lineWidth * 1.25),
 //new Point(centerX + 200, centerY, lightning.lineWidth * 1.25)
     points = [
-				new Point(0, centerY, lightning.lineWidth * 1.25),
-        new Point(document.querySelector('.header__heading h1').clientWidth, centerY, lightning.lineWidth * 1.25)
+				new Point(0, centerY, lightning.lineWidth * 0.01),
+        new Point(document.querySelector('.header__heading h1').clientWidth - 20, centerY, lightning.lineWidth * 0.01)
     ];
 
     lightning.startPoint.set(points[0]);
