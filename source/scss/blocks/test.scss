@@ -3,7 +3,15 @@
 
 	&__wrapper {
 		position: relative;
-		margin-bottom: 105px;
+		margin-bottom: 40px;
+
+		@include media(md) {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			min-height: vw(290);
+			margin-bottom: vw(50);
+		}
 	}
 
 	&__heading {
@@ -16,6 +24,15 @@
 		font-weight: 400;
 		text-transform: uppercase;
 		text-align: center;
+
+		@include media(md) {
+			max-width: 92%;
+			margin: 0 auto vw(64);
+			transform: translateX(vw(32));
+
+			@include fluid-font-size(36px, 80px, 430px, 1920px);
+			line-height: 1.175;
+		}
 	}
 
 	&__question {
@@ -25,6 +42,41 @@
 		line-height: 1.38;
 		text-align: center;
 		font-weight: 500;
+		text-transform: uppercase;
+
+		@include media(md) {
+			width: 70%;
+			margin: 0 auto;
+			padding-top: 0;
+
+			@include fluid-font-size(21px, 30px, 430px, 1920px);
+			line-height: 1.4;
+		}
+	}
+
+	&__answer {
+		text-align: center;
+
+		@include media(md) {
+			padding-top: vw(75);
+		}
+
+		&-text {
+			@include fluid-font-size(16px, 24px, 320px, 430px);
+			line-height: 1.25;
+			text-transform: uppercase;
+			text-align: center;
+			font-weight: 500;
+			color: $color-red;
+
+			@include media(md) {
+				width: 50%;
+				margin: vw(-20) auto vw(-7);
+
+				@include fluid-font-size(24px, 30px, 768px, 1920px);
+				line-height: 1.4;
+			}
+		}
 	}
 
 	&__counter {
@@ -41,12 +93,25 @@
 		font-weight: 900;
 		color: $color-counter;
 		text-align: center;
+
+		@include media(md) {
+			top: vw(-10);
+
+			@include fluid-font-size(144px, 288px, 430px, 1920px);
+		}
 	}
 
 	&__buttons {
 		display: flex;
 		flex-direction: column;
-		margin-top: 40px;
+		margin-bottom: 105px;
+
+		@include media(md) {
+			flex-direction: row;
+			justify-content: center;
+
+			margin-bottom: vw(300);
+		}
 	}
 
 	&__btn {
@@ -62,8 +127,15 @@
 		background-color: $color-red;
 		align-self: center;
 
-		& + * {
+		& + *:not(&--next) {
 			margin-top: 16px;
+		}
+
+		@include media(md) {
+			& + *:not(&--next) {
+				margin-top: 0;
+				margin-left: vw(30);
+			}
 		}
 
 		&:hover,
@@ -93,11 +165,16 @@
 	&__progress {
 		display: flex;
 		justify-content: space-between;
-		width: 100%;
-		max-width: 830px;
+		width: calc(100% - 10px);
 		height: 1px;
-		margin: 0 5px 60px;
+		margin: 0 auto 60px;
 		background-color: $color-grey2;
+
+		@include media(md) {
+			max-width: vw(844);
+
+			transform: translateX(-17px);
+		}
 
 		&-item {
 			$item: &;
@@ -126,6 +203,10 @@
 				font-weight: 500;
 				color: $color-pink;
 				line-height: 1;
+
+				@include media(md) {
+					top: vw(47);
+				}
 			}
 
 			&--active {
@@ -146,7 +227,8 @@
 	}
 
 	img {
-		display: block;
+		display: inline-block;
+		vertical-align: top;
 		max-width: 100%;
 		height: auto;
 	}

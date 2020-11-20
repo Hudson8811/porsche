@@ -26,14 +26,31 @@
 		max-width: 420px;
 		margin: 230px auto 36px; //46.3vw
 
-		@include fluid-font-size(42px, 134px, 320px, 1920px);
-		line-height: 0.87;
-		color: $white;
-		font-family: "Playfair Display", "Georgia", serif;
-		font-weight: 400;
-		text-transform: uppercase;
-		text-align: center;
+		h1 {
+			width: vw(960);
+			margin: 0;
 
+			@include fluid-font-size(42px, 134px, 320px, 1920px);
+			line-height: 0.87;
+			color: $white;
+			font-family: "Playfair Display", "Georgia", serif;
+			font-weight: 400;
+			text-transform: uppercase;
+			text-align: center;
+		}
+
+		canvas {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			//width: 100% !important;
+			//height: 100% !important;
+			//max-width: vw(760);
+			//background-color: yellow;
+		}
+
+		/*
 		&::before {
 			content: "";
 			position: absolute;
@@ -48,6 +65,7 @@
 			opacity: 0.9;
 			filter: blur(25px);
 		}
+		*/
 
 		@include media(md) {
 			/*display: inline;*/
@@ -56,7 +74,10 @@
 			margin-top: 0;
 			margin-left: vw(-18);
 			margin-bottom: vw(45);
-			text-align: left;
+
+			h1 {
+				text-align: left;
+			}
 
 			&::before {
 				max-width: 500px;

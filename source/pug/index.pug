@@ -9,14 +9,14 @@ block content
 			.test__heading К какой гоночной серии относится этот факт:
 			.test__wrapper
 				.test__counter 01/07
-				.test__question Здесь гоночные болиды набирают 100 км/ч за 2,8 секунды и разгоняются до максималки в 280 км/ч. Как называется этот чемпионат?
-				.test__answer(style="display: none;")
+				.test__question(style="display: none;") Здесь гоночные болиды набирают 100 км/ч за 2,8 секунды и разгоняются до максималки в 280 км/ч. Как называется этот чемпионат?
+				.test__answer
 					img(src="img/car.png", width="1276", height="386" alt="car")
 					.test__answer-text Точно! От динамики электрических формул буквально захватывает дух!
-				.test__buttons
-					a.test__btn(href="#") Это Formula E
-					a.test__btn.test__btn--white(href="#") Это чемпионат WRC
-					a.test__btn(href="#", style="display: none;") Далее
+			.test__buttons
+				a.test__btn(href="#", style="display: none;") Это Formula E
+				a.test__btn.test__btn--white(href="#", style="display: none;") Это чемпионат WRC
+				a.test__btn.test__btn--next(href="#") Далее
 			.test__progress
 				- let i = 1;
 				while i <= 7

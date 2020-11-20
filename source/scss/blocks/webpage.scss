@@ -20,5 +20,9 @@
 
 	&__header {
 		margin-bottom: 60px;
+
+		@include media(md) {
+			margin-bottom: vw(208);
+		}
 	}
 }
