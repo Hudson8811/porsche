@@ -1,12 +1,9 @@
 .webpage {
 	background-repeat: no-repeat;
 	background-position: right 0 top 0;
-	background-image: url("../img/mobile-bg.jpg");
+	background-image: url("../img/mobile-bg-v2.jpg");
+	background-size: 100% 760px;
 	background-color: $color-bg;
-
-	@include retina {
-		background-image: url("../img/mobile-bg@2x.jpg");
-	}
 
 	@include media(md) {
 		background-position: 30% -20px;

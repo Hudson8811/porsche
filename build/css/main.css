@@ -576,6 +576,7 @@ a {
   .test__btn {
     min-width: 285px;
     padding: 20px 8px;
+    cursor: default;
     font-size: 20px;
     text-align: center;
     font-weight: 500;
@@ -917,11 +918,9 @@ a {
 .webpage {
   background-repeat: no-repeat;
   background-position: right 0 top 0;
-  background-image: url("../img/mobile-bg.jpg");
+  background-image: url("../img/mobile-bg-v2.jpg");
+  background-size: 100% 760px;
   background-color: #e7eced; }
-  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-    .webpage {
-      background-image: url("../img/mobile-bg@2x.jpg"); } }
   @media (min-width: 768px) {
     .webpage {
       background-position: 30% -20px;

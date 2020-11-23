@@ -117,6 +117,7 @@
 	&__btn {
 		min-width: 285px;
 		padding: 20px 8px;
+		cursor: default;
 
 		@include fluid-font-size(20px, 26px, 320px, 430px);
 		text-align: center;
