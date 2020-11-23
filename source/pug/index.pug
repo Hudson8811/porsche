@@ -4,19 +4,19 @@ block variables
 	- let isHome = true;
 
 block content
-	section.test
+	section#test.test
 		.container
 			.test__heading К какой гоночной серии относится этот факт:
 			.test__wrapper
-				.test__counter 01/07
-				.test__question(style="display: none;") Здесь гоночные болиды набирают 100 км/ч за 2,8 секунды и разгоняются до максималки в 280 км/ч. Как называется этот чемпионат?
-				.test__answer
+				.test__counter <span class="current-step">01</span>/07
+				.test__question Здесь гоночные болиды набирают 100 км/ч за 2,8 секунды и разгоняются до максималки в 280 км/ч. Как называется этот чемпионат?
+				.test__answer(style="display: none;")
 					img(src="img/car.png", width="1276", height="386" alt="car")
 					.test__answer-text Точно! От динамики электрических формул буквально захватывает дух!
 			.test__buttons
-				a.test__btn(href="#", style="display: none;") Это Formula E
-				a.test__btn.test__btn--white(href="#", style="display: none;") Это чемпионат WRC
-				a.test__btn.test__btn--next(href="#") Далее
+				a.test__btn.js-btn-option.js-btn-option--1(data-option='1') Это Formula E
+				a.test__btn.test__btn--white.js-btn-option.js-btn-option--2(data-option='2') Это чемпионат WRC
+				a.test__btn.test__btn--next.js-btn-next(style="display: none;") Далее
 			.test__progress
 				- let i = 1;
 				while i <= 7
@@ -30,6 +30,29 @@ block content
 						.test__progress-item
 							span.test__progress-item-text 0#{i}
 					- i++;
+	section.test.test--result(style="display: none;")
+		.container
+			.test__heading Браво! Официально именуем тебя богом грома, а главное молнии.
+			img(src="img/car.png", width="1276", height="386" alt="car")
+			.test__result-text Открывай пока шампанское, а мы поставим для тебя We’re the champions! Ну а если хочешь узнать больше об электрических суперкарах Porsche <a href="#">заходи сюда</a>
+			.test__share Поделись с друзьями
+			ul.test__social.social(data-title="Заголовок share" data-image="" data-url="https://karcher.maximonline.ru/share/")
+				li.social__item.social__item--vk
+					a.social__link(target="_blank" class='vk' href='javascript:;' data-id='share_vk' data-mode="nohash")
+						+icon('vk')(width="24", height="24")
+						span.visually-hidden Вконтакте
+				li.social__item.social__item--ok
+					a.social__link(target="_blank" class='ok' href='javascript:;' data-id='share_ok' data-mode="nohash")
+						+icon('ok')(width="24", height="24")
+						span.visually-hidden Одноклассники
+				li.social__item.social__item--fb
+					a.social__link(target="_blank" class='fb' href='javascript:;' data-id='share_fb' data-mode="nohash")
+						+icon('fb')(width="24", height="24")
+						span.visually-hidden Фейсбук
+				li.social__item.social__item--tw
+					a.social__link(target="_blank" class='tw' href='javascript:;' data-id='share_tw' data-mode="nohash")
+						+icon('tw')(width="24", height="24")
+						span.visually-hidden Твиттер
 
 block footer
 	//-include modules/footer.pug

@@ -57,9 +57,9 @@
 	&__answer {
 		text-align: center;
 
-		@include media(md) {
+		/*@include media(md) {
 			padding-top: vw(75);
-		}
+		}*/
 
 		&-text {
 			@include fluid-font-size(16px, 24px, 320px, 430px);
@@ -68,10 +68,11 @@
 			text-align: center;
 			font-weight: 500;
 			color: $color-red;
+			margin: vw(60) auto;
 
 			@include media(md) {
 				width: 50%;
-				margin: vw(-20) auto vw(-7);
+				margin: vw(20) auto;
 
 				@include fluid-font-size(24px, 30px, 768px, 1920px);
 				line-height: 1.4;
@@ -80,8 +81,7 @@
 	}
 
 	&__counter {
-		position: absolute;
-		z-index: -1;
+		position: relative;
 		left: 50%;
 		top: 0;
 		transform: translateX(-50%);
@@ -230,6 +230,90 @@
 		display: inline-block;
 		vertical-align: top;
 		max-width: 100%;
+		max-height: 500vw;
 		height: auto;
+		object-fit: cover;
+	}
+
+	&--result {
+		padding-bottom: vw(100);
+
+		img {
+			display: block;
+			margin: 0 auto;
+		}
+
+		.container {
+			position: relative;
+		}
+
+		.test {
+			&__result-text {
+				font-size: vw(30);
+				line-height: vw(42);
+				text-align: center;
+				max-width: vw(1063);
+				margin: 0 auto vw(125);
+				text-transform: uppercase;
+
+				@media (max-width: 767px) {
+					font-size: vw(80);
+					line-height: vw(90);
+					max-width: 100%;
+				}
+
+				a {
+					color: #FF0000;
+					text-decoration: underline;
+
+					&:hover {
+						text-decoration: none;
+					}
+				}
+			}
+
+			&__share {
+				font-size: vw(26);
+				line-height: vw(24);
+				font-weight: 500;
+				color: #868686;
+				text-align: center;
+				margin-bottom: vw(14);
+
+				@media (max-width: 767px) {
+					font-size: vw(70);
+					line-height: vw(80);
+					margin-bottom: vw(30);
+				}
+			}
+
+			&__social {
+				justify-content: center;
+
+				li {
+					width: vw(73);
+					height: vw(66);
+					background: #F91719;
+					border-radius: 50%;
+
+					@media (max-width: 767px) {
+						width: vw(173);
+						height: vw(180);
+					}
+				}
+
+				a {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					width: 100%;
+					height: 100%;
+				}
+
+				svg {
+					fill: $white;
+				}
+			}
+		}
 	}
 }

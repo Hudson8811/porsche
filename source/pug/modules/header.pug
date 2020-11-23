@@ -2,21 +2,21 @@ header.webpage__header.header
 	.header__inner.container
 		a.header__logo.logo
 			+icon('logo')(width="242" height="48", aria-label="MAXIM")
-		ul.header__social.social
+		ul.header__social.social(data-title="Заголовок share" data-image="" data-url="https://karcher.maximonline.ru/share/")
 			li.social__item.social__item--vk
-				a.social__link(href="#", target="_blank")
+				a.social__link(target="_blank" class='vk' href='javascript:;' data-id='share_vk' data-mode="nohash")
 					+icon('vk')(width="24", height="24")
 					span.visually-hidden Вконтакте
 			li.social__item.social__item--ok
-				a.social__link(href="#", target="_blank")
+				a.social__link(target="_blank" class='ok' href='javascript:;' data-id='share_ok' data-mode="nohash")
 					+icon('ok')(width="24", height="24")
 					span.visually-hidden Одноклассники
 			li.social__item.social__item--fb
-				a.social__link(href="#", target="_blank")
+				a.social__link(target="_blank" class='fb' href='javascript:;' data-id='share_fb' data-mode="nohash")
 					+icon('fb')(width="24", height="24")
 					span.visually-hidden Фейсбук
 			li.social__item.social__item--tw
-				a.social__link(href="#", target="_blank")
+				a.social__link(target="_blank" class='tw' href='javascript:;' data-id='share_tw' data-mode="nohash")
 					+icon('tw')(width="24", height="24")
 					span.visually-hidden Твиттер
 		.header__heading
@@ -26,6 +26,6 @@ header.webpage__header.header
 			p Возможно ты не знал, но слова Порше и электричество подружились раньше, чем Порше и автомобиль. Еще будучи безусым студентом молодой Фердинанд Порше электрифицировал дом своих родителей. На дворе, как сейчас помним, стоял тусклый и унылый 1891 год…
 
 			p Сегодня же Porsche не только предлагает в фирменных шоу-румах электрический гиперкар – если ты еще не в курсе он называется Taycan (можно лендинг сюда) – но и участвует в гонках чемпионата Formula E. Это специальная серия, в которую допущены только болиды на электротяге. Кстати, этот чемпионат по интриге и зрелищности заткнет за пояс даже “Формулу-1”! Не веришь? Пройди наш тест и сам убедишься. На старт, внимание, гоу!
-		a.header__btn(href="#") Пройти тест
+		a.header__btn.anchor(href="#test") Пройти тест
 
 

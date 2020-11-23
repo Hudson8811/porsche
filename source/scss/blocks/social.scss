@@ -4,6 +4,7 @@
 
 	&__item {
 		align-self: center;
+		margin-right: vw(38);
 
 		@include media(md) {
 			margin-right: vw(14);
@@ -17,11 +18,18 @@
 	&__link {
 		svg {
 			display: block;
+			width: vw(80);
+			height: vw(80);
 			fill: $color-social;
 
+			@media (max-width: 450px) {
+				width: vw(100);
+				height: vw(100);
+			}
+
 			@include media(md) {
-				width: 34px;
-				height: 34px;
+				width: vw(34);
+				height: vw(34);
 			}
 		}
 
