@@ -115,34 +115,21 @@ $(document).ready(function () {
 	anchorScroll($('.anchor'));
 
 	function anchorScroll(e) {
-		e.click(function () {
-			link = $(this).attr('href');
-			to = $(link).offset().top;
+		setTimeout(function () {
+			e.click(function () {
+				link = $(this).attr('href');
+				to = $(link).offset().top;
 
-			$('body, html').animate({
-				scrollTop: to
-			}, 800);
-		});
+				$('body, html').animate({
+					scrollTop: to
+				}, 800);
+			});
+		}, 100);
 	}
 
 	//////////////////
 
-	$('.progress .dot').each(function (index) {
-		var pos = $(this).parent().width() / $('.progress .dot').length,
-			pos2 = pos + pos / $('.progress .dot').length + 2;
-
-		$(this).css('left', index * pos2);
-	});
-
-	//////////////////
-
-	$('.screen__start').click(function () {
-		$('.screen--step').show();
-	});
-
-	$('.result__btn').click(function () {
-		$('.screen--result').hide();
-		$('.screen--step').show();
+	$('.js-start').click(function () {
 		curQuestion = 0;
 		countQuestion = 1;
 		points = 0;
@@ -150,6 +137,9 @@ $(document).ready(function () {
 		countQuestion = allQuestions.test.length;
 		curQuestion++;
 		setQuestion(curQuestion, allQuestions);
+		$('.current-step').text('01');
+		$('.test--result').hide();
+		$('#test').show();
 	});
 
 	////////////////
