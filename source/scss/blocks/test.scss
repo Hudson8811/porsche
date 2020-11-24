@@ -10,7 +10,7 @@
 			flex-direction: column;
 			justify-content: center;
 			min-height: vw(290);
-			margin-bottom: vw(50);
+			margin-bottom: vw(25);
 		}
 	}
 
@@ -27,10 +27,10 @@
 
 		@include media(md) {
 			max-width: 92%;
-			margin: 0 auto vw(64);
+			margin: vw(60) auto vw(32);
 			transform: translateX(vw(32));
 
-			@include fluid-font-size(36px, 80px, 430px, 1920px);
+			@include fluid-font-size(30px, 40px, 430px, 1920px);
 			line-height: 1.175;
 		}
 	}
@@ -49,7 +49,7 @@
 			margin: 0 auto;
 			padding-top: 0;
 
-			@include fluid-font-size(21px, 30px, 430px, 1920px);
+			@include fluid-font-size(15px, 25px, 430px, 1920px);
 			line-height: 1.4;
 		}
 	}
@@ -74,7 +74,7 @@
 				width: 50%;
 				margin: vw(20) auto;
 
-				@include fluid-font-size(24px, 30px, 768px, 1920px);
+				@include fluid-font-size(20px, 24px, 768px, 1920px);
 				line-height: 1.4;
 			}
 		}
@@ -97,7 +97,7 @@
 		@include media(md) {
 			top: vw(-10);
 
-			@include fluid-font-size(144px, 288px, 430px, 1920px);
+			@include fluid-font-size(72px, 144px, 430px, 1920px);
 		}
 	}
 
@@ -110,7 +110,7 @@
 			flex-direction: row;
 			justify-content: center;
 
-			margin-bottom: vw(300);
+			margin-bottom: vw(150);
 		}
 	}
 
@@ -118,8 +118,10 @@
 		min-width: 285px;
 		padding: 20px 8px;
 		cursor: default;
+		transition: all 0.3s ease;
+		border: solid 1px $color-red;
 
-		@include fluid-font-size(20px, 26px, 320px, 430px);
+		@include fluid-font-size(20px, 24px, 320px, 430px);
 		text-align: center;
 		font-weight: 500;
 		color: $white;
@@ -137,9 +139,13 @@
 				margin-top: 0;
 				margin-left: vw(30);
 			}
+
+			&:hover {
+				color: $color-red;
+				background-color: $white;
+			}
 		}
 
-		&:hover,
 		&:focus {
 			outline: none;
 			background-color: lighten($color-red, 10%);
@@ -147,19 +153,6 @@
 
 		&:active {
 			opacity: 0.7;
-		}
-
-		&--white {
-			padding: 18px 8px;
-			color: $color-red;
-			border: solid 1px $color-red;
-			background-color: $white;
-
-			&:hover,
-			&:focus {
-				color: lighten($color-red, 10%);
-				background-color: $white;
-			}
 		}
 	}
 
@@ -230,8 +223,8 @@
 	img {
 		display: inline-block;
 		vertical-align: top;
-		max-width: 100%;
-		max-height: 500vw;
+		max-width: 50%;
+		max-height: 400vw;
 		height: auto;
 		object-fit: cover;
 	}
@@ -250,11 +243,11 @@
 
 		.test {
 			&__result-text {
-				font-size: vw(30);
-				line-height: vw(42);
+				font-size: vw(27);
+				line-height: vw(34);
 				text-align: center;
 				max-width: vw(1063);
-				margin: 0 auto vw(125);
+				margin: 0 auto vw(85);
 				text-transform: uppercase;
 
 				@media (max-width: 767px) {
@@ -292,8 +285,8 @@
 				justify-content: center;
 
 				li {
-					width: vw(73);
-					height: vw(66);
+					width: vw(66);
+					height: vw(60);
 					background: #F91719;
 					border-radius: 50%;
 

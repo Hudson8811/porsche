@@ -115,34 +115,21 @@ $(document).ready(function () {
 	anchorScroll($('.anchor'));
 
 	function anchorScroll(e) {
-		e.click(function () {
-			link = $(this).attr('href');
-			to = $(link).offset().top;
+		setTimeout(function () {
+			e.click(function () {
+				link = $(this).attr('href');
+				to = $(link).offset().top;
 
-			$('body, html').animate({
-				scrollTop: to
-			}, 800);
-		});
+				$('body, html').animate({
+					scrollTop: to
+				}, 800);
+			});
+		}, 100);
 	}
 
 	//////////////////
 
-	$('.progress .dot').each(function (index) {
-		var pos = $(this).parent().width() / $('.progress .dot').length,
-			pos2 = pos + pos / $('.progress .dot').length + 2;
-
-		$(this).css('left', index * pos2);
-	});
-
-	//////////////////
-
-	$('.screen__start').click(function () {
-		$('.screen--step').show();
-	});
-
-	$('.result__btn').click(function () {
-		$('.screen--result').hide();
-		$('.screen--step').show();
+	$('.js-start').click(function () {
 		curQuestion = 0;
 		countQuestion = 1;
 		points = 0;
@@ -150,6 +137,9 @@ $(document).ready(function () {
 		countQuestion = allQuestions.test.length;
 		curQuestion++;
 		setQuestion(curQuestion, allQuestions);
+		$('.current-step').text('01');
+		$('.test--result').hide();
+		$('#test').show();
 	});
 
 	////////////////
@@ -160,33 +150,35 @@ $(document).ready(function () {
 
 	$.getJSON('quiz.json', function (data) {
 		allQuestions = data;
-		//mixArray(allQuestions.test);
+		mixArray(allQuestions.test);
 		countQuestion = allQuestions.test.length;
 		curQuestion++;
 		setQuestion(curQuestion, allQuestions);
 	});
 
-	$('.question__opt').click(function () {
+	$('.js-btn-option').click(function () {
 		var choise = $(this).attr('data-option'),
 			answer = allQuestions.test[curQuestion - 1].answer;
 
 		if (allQuestions.test[curQuestion-1].correct === choise) {
 			points++;
-			$('.answer__text').html(answer.correct);
+			$('.test__answer-text').html(answer.correct);
 		} else {
-			$('.answer__text').html(answer.incorrect);
+			$('.test__answer-text').html(answer.incorrect);
 		}
 
-		$('.question').hide();
-		$('.answer').show();
+		$('.test__question').hide();
+		$('.js-btn-option').hide();
+		$('.test__answer').show();
+		$('.js-btn-next').show();
 	});
 
-	$('.answer__next').click(function () {
+	$('.js-btn-next').click(function () {
 		if (curQuestion < countQuestion) {
 			curQuestion++;
 			setQuestion(curQuestion, allQuestions);
 			$('.current-step').text(curQuestion.toString().padStart(2,0));
-			$('.progress .dot--active').removeClass('dot--active').next().addClass('dot--active');
+			$('.test__progress-item--active').removeClass('test__progress-item--active').next().addClass('test__progress-item--active');
 		} else {
 			showResults(points);
 		}
@@ -215,13 +207,15 @@ function setQuestion(curQuestion, allQuestions) {
 		optionFirst = quest.options.first,
 		optionSecond = quest.options.second;
 
-	$('.question__text').html(title);
-	$('.answer > img').attr('src', img);
-	$('.question__opt--1 span').text(optionFirst);
-	$('.question__opt--2 span').text(optionSecond);
+	$('.test__question').html(title);
+	$('.test__answer > img').attr('src', img);
+	$('.js-btn-option--1').text(optionFirst);
+	$('.js-btn-option--2').text(optionSecond);
 
-	$('.question').show();
-	$('.answer').hide();
+	$('.test__question').show();
+	$('.test__answer').hide();
+	$('.js-btn-option').show();
+	$('.js-btn-next').hide();
 }
 
 function showResults(points) {
@@ -237,10 +231,10 @@ function showResults(points) {
 			win = 0;
 		}
 
-		$('.screen--quiz').hide();
-		$('.screen--result').show();
+		$('.test').hide();
+		$('.test--result').show();
 
-		$('.result__title').html(result[win].title);
-		$('.result__text').html(result[win].text);
+		$('.test--result .test__heading').html(result[win].title);
+		$('.test--result .test__result-text').html(result[win].text);
 	})
 }
