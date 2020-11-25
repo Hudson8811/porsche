@@ -234,7 +234,12 @@
 
 		img {
 			display: block;
-			margin: 0 auto vw(20);
+			margin: 0 auto vw(50);
+			max-width: 30%;
+
+			@media (max-width: 767px) {
+				margin: 0 auto vw(80);
+			}
 		}
 
 		.container {

@@ -672,7 +672,11 @@ a {
     padding-bottom: 5.20833vw; }
     .test--result img {
       display: block;
-      margin: 0 auto 1.04167vw; }
+      margin: 0 auto 2.60417vw;
+      max-width: 30%; }
+      @media (max-width: 767px) {
+        .test--result img {
+          margin: 0 auto 4.16667vw; } }
     .test--result .container {
       position: relative; }
     .test--result .test__result-text {
