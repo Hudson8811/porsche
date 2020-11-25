@@ -140,6 +140,7 @@ $(document).ready(function () {
 		$('.current-step').text('01');
 		$('.test--result').hide();
 		$('#test').show();
+		$('.test__progress-item').removeClass('test__progress-item--active').first().addClass('test__progress-item--active');
 	});
 
 	////////////////
@@ -221,7 +222,7 @@ function setQuestion(curQuestion, allQuestions) {
 function showResults(points) {
 	$.getJSON('result.json', function (data) {
 		var result = data.result,
-			win;
+				win;
 
 		if (points > 5) {
 			win = 2;
@@ -235,6 +236,7 @@ function showResults(points) {
 		$('.test--result').show();
 
 		$('.test--result .test__heading').html(result[win].title);
+		$('.test--result .container img').attr('src', result[win].img);
 		$('.test--result .test__result-text').html(result[win].text);
 	})
 }

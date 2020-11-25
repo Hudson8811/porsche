@@ -143,6 +143,7 @@
 		@include media(md) {
 			max-width: 60%;
 			//font-size: vw(30);
+			text-shadow: 1px 1px 5px #383737;
 
 			@include fluid-font-size(13px, 19px, 768px, 1920px);
 			line-height: 1.24;

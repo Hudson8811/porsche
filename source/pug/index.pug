@@ -33,7 +33,7 @@ block content
 	section.test.test--result(style="display: none;")
 		.container
 			.test__heading Браво! Официально именуем тебя богом грома, а главное молнии.
-			img(src="img/car.png", width="1276", height="386" alt="car")
+			img(src="", width="1276", height="386" alt="car")
 			.test__result-text Открывай пока шампанское, а мы поставим для тебя We’re the champions! Ну а если хочешь узнать больше об электрических суперкарах Porsche <a href="#">заходи сюда</a>
 			.test__share Поделись с друзьями
 			ul.test__social.social(data-title="Заголовок share" data-image="" data-url="https://karcher.maximonline.ru/share/")
@@ -53,6 +53,8 @@ block content
 					a.social__link(target="_blank" class='tw' href='javascript:;' data-id='share_tw' data-mode="nohash")
 						+icon('tw')(width="24", height="24")
 						span.visually-hidden Твиттер
+			.test__bottom-nav
+				a.test__btn.test__btn--again.js-start Пройти еще раз
 
 block footer
 	//-include modules/footer.pug

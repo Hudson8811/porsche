@@ -154,6 +154,26 @@
 		&:active {
 			opacity: 0.7;
 		}
+
+		&--again {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-width: auto;
+			width: 230px;
+			height: 60px;
+			padding: 0 8px;
+		}
+	}
+
+	&__bottom-nav {
+		display: flex;
+		justify-content: center;
+		margin-top: vw(50);
+
+		@media (max-width: 767px) {
+			margin-top: vw(120);
+		}
 	}
 
 	&__progress {

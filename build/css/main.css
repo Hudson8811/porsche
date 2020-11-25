@@ -609,6 +609,26 @@ a {
       background-color: #fa494a; }
     .test__btn:active {
       opacity: 0.7; }
+    .test__btn--again {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+          align-items: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+      min-width: auto;
+      width: 230px;
+      height: 60px;
+      padding: 0 8px; }
+  .test__bottom-nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    margin-top: 2.60417vw; }
+    @media (max-width: 767px) {
+      .test__bottom-nav {
+        margin-top: 6.25vw; } }
   .test__progress {
     display: -ms-flexbox;
     display: flex;
@@ -858,6 +878,7 @@ a {
     @media (min-width: 768px) {
       .header__text {
         max-width: 60%;
+        text-shadow: 1px 1px 5px #383737;
         font-size: 13px;
         line-height: 1.24;
         color: #ffffff;
