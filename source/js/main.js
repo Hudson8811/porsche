@@ -140,6 +140,7 @@ $(document).ready(function () {
 		$('.current-step').text('01');
 		$('.test--result').hide();
 		$('#test').show();
+		$('.test__progress-item').removeClass('test__progress-item--active').first().addClass('test__progress-item--active');
 	});
 
 	////////////////
